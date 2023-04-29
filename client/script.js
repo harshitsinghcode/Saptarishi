@@ -28,7 +28,7 @@ function typeText(element,text){
     let interval = setInterval(() => {
 
         if(index<text.length){
-            element.innerHTML +=text.charAt(index);
+            element.innerHTML +=text.chartAt(index);
             index++;
         }
         else{
@@ -90,7 +90,7 @@ const handleSubmit = async (e) => {
 
 //fetch data from server 
 
-const response = await fetch('https://saptarishie.onrender.com/',{
+const response = await fetch('http://localhost:5000',{
 method : 'POST',
 headers: {
     'Content-Type': 'application/json'
