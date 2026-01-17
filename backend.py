@@ -1,16 +1,22 @@
-from langgraph.graph import StateGraph, START, END
+import os
 from typing import TypedDict, Annotated
+import streamlit as st 
+
+from langchain_groq import ChatGroq 
 from langchain_core.messages import BaseMessage
+from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph.message import add_messages
-from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 
 load_dotenv()
 
+if "GROQ_API_KEY" not in os.environ and "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+
 llm = ChatGroq(
     model="llama-3.1-8b-instant",
-    temperature=0.7,
+    temperature=0.7
 )
 
 class ChatState(TypedDict):
