@@ -2,7 +2,7 @@ import streamlit as st
 from langchain_core.messages import HumanMessage
 from backend import chatbot 
 
-st.title("🤖 Llama 3 Chatbot")
+st.title("🤖 Saptarishi v.02")
 
 CONFIG = {'configurable': {'thread_id': 'thread-1'}}
 
