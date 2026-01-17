@@ -2,7 +2,7 @@ import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessageChunk
 from backend import chatbot 
 
-st.title("🤖 Chatbot (Real Streaming)")
+st.title("🤖 Saptarishi")
 
 CONFIG = {'configurable': {'thread_id': 'thread-1'}}
 
